@@ -1,4 +1,9 @@
 .entete{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+}
+.entete__nav{
+    display: flex;
+    flex-direction: row;
 }
