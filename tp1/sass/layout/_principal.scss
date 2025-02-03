@@ -1,0 +1,49 @@
+.global {
+   margin : 0 auto;
+   max-width: 1000px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: space-around;
+   min-height: 75vh;
+}
+
+.hero{
+    min-height: 75vh;
+    background-image: url("images/maldives.jpg");
+    display: flex;
+}
+button{
+    display: block;
+    padding: 2vw;
+    border-radius: 2em;
+    font-size: 2em;
+    height: fit-content;
+}
+.global>*{
+    margin: 1vw;
+    width: fit-content;
+}
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+input{
+    display: block;
+    width: 10em;
+}
+.inscrire{
+    width: fit-content;
+    height: fit-content;
+}

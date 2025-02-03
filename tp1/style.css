@@ -1,91 +1,188 @@
 @charset "UTF-8";
-/* /////////////
-Fichier principal de la structure Sass
-/////////////// */
 /*
-Theme Name: TP1 Laurence Mongeau
-Theme URI: 
-Author: Laurence Mongeau
-Author URI: https://github.com/doucebaleine
-Description: Thème développé dans les cadre du cours 4w4
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
-Version: 1.3
-Requires at least: 5.0
-Tested up to: 5.4
+Theme Name: 4W4 - Eddy Martin
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème de base développer dans le cadre du cours 4W4
+Version: 1.0
+Tested up to: 6.2
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: twentytwenty
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Text Domain: 4w4-eddy
 */
-/* /////////////
-Les variables
-//////////////*/
-/* /////////////
-Les règles de base
-/////////////// */
-a {
-  color: #595;
-}
-
-body {
-  font-size: 16px;
-}
-
-h1 {
-  font-size: clamp(1rem, 2.5vw, 4rem);
-}
-
-h2 {
-  font-size: clamp(1rem, 2.5vw, 4rem);
-}
-
-h3 {
-  font-size: clamp(1rem, 2.5vw, 4rem);
-}
-
-h4 {
-  font-size: clamp(1rem, 2.5vw, 4rem);
-}
-
-h5 {
-  font-size: clamp(1rem, 2.5vw, 4rem);
-}
-
-h6 {
-  font-size: clamp(1rem, 2.5vw, 4rem);
-}
-
-/* /////////////
+/* /////////////////////
+Les Variables
+//////////////////////// */
+/* /////////////////////////
 Les composants
-/////////////// */
-.menu ul {
+/////////////////////////// */
+/* /////////////////////////////////////////// menu principal */
+.menu {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
-.menu ul li {
-  display: inline-block;
+@media screen and (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+  }
 }
-.menu ul li a {
+.menu__a {
   color: #333;
   text-decoration: none;
+  padding: 2px 5px;
 }
 
-/* //////////
-Le layout
-////////////*/
-.entete {
+/* *******************
+Le composant .carte
+********************** */
+.carte {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+.carte--grande {
+  padding: 40px;
+}
+.carte--petite {
+  padding: 20px;
+}
+.carte__image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.carte__contenu {
+  margin-top: 15px;
+}
+.carte__titre {
+  font-size: 24px;
+  color: #333;
+}
+.carte__description {
+  font-size: 16px;
+  color: #666;
+}
+.carte__bouton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.carte__bouton--actif {
+  background-color: #0056b3;
+}
+.carte__bouton:hover {
+  background-color: #0056b3;
+}
+
+.recherche {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.recherche__input {
+  flex: 1;
+  height: 1.8rem;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-right: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.recherche__input:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 0 3px;
 }
 
+/* /////////////////////////
+Layout 
+/////////////////////////// */
 .global {
-  max-width: 1100px;
-  padding: 10vh 5vw;
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 75vh;
 }
 
 .hero {
-  background-image: url(images/maldives.jpg);
-  min-height: 100vh;
+  min-height: 75vh;
+  background-image: url("images/maldives.jpg");
+  display: flex;
+}
+
+button {
+  display: block;
+  padding: 2vw;
+  border-radius: 2em;
+  font-size: 2em;
+  height: fit-content;
+}
+
+.global > * {
+  margin: 1vw;
+  width: fit-content;
+}
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+input {
+  display: block;
+  width: 10em;
+}
+
+.inscrire {
+  width: fit-content;
+  height: fit-content;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.entete__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0 40px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 700px) {
+  .entete__nav {
+    flex-direction: column;
+  }
+}
+
+.entete__logo img {
+  width: 10vw;
 }/*# sourceMappingURL=style.css.map */
