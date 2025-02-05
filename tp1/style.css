@@ -256,7 +256,12 @@ input {
 @media screen and (max-width: 700px) {
   .entete__nav {
     flex-direction: column;
-    display: none;
+    position: absolute;
+    top: 60px; /* Adjust based on your header size */
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
   }
 }
 .entete__logo {
@@ -282,6 +287,7 @@ input {
 .entete__checkbox {
   display: none;
 }
+
 .entete__checkbox:checked ~ .entete__nav {
-  display: block;
+  display: none;
 }/*# sourceMappingURL=style.css.map */
