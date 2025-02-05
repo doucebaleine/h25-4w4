@@ -6,7 +6,9 @@
     &__nav {
         display: flex;
         @media screen and (max-width:$point__rupture) {
-            flex-direction: column; 
+            flex-direction: column;
+            display: none;
+            // visibility: collapse;
         }
         flex-direction: row; 
         align-items: center;
@@ -14,8 +16,15 @@
         flex-wrap: wrap;
 
     }
-    &__logo img{
+    &__logo{
         width: 5vw;
+        @media screen and (max-width:$point__rupture) {
+            width: 10vw;
+        }
+    }
+    &__logo img{
+        width: 100%;
+        object-fit: cover ;
     }
     &__burger{
         display: none;
@@ -26,10 +35,8 @@
     &__checkbox{
         display: none;
     }
-    &__burger:checked{
-        &__nav{
-            display: flex;
-        }
+    &__checkbox:checked ~ &__nav{
+        display: block;
     }
 }
 

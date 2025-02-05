@@ -1,5 +1,6 @@
 .global {
    margin : 0 auto;
+   width: 100%;
    max-width: 1000px;
    display: flex;
    flex-direction: column;
@@ -17,8 +18,31 @@
 
     &__titre{
         font-size: 3em;
+        color: rgb(227, 215, 251);
+        text-shadow: 3px 3px 2px rgb(55, 42, 82);
+        @media screen and (max-width:$point__rupture){
+            font-size: 2em;
+        }
     }
-
+    &__description{
+        font-weight: bold;
+        font-size: 1em;
+        width: 50vw;
+        padding: 0.5em;
+        border-radius: 1em;
+        background-color:rgb(227, 215, 251);
+        @media screen and (max-width:$point__rupture){
+            width: 60vw;
+        }
+    }
+    &__infos{
+        color: white;
+        font-weight: bold;
+    }
+    &__infos a{
+        text-decoration: none;
+        color: white;
+    }
     &__bouton{
         display: block;
         padding: 2vw;
@@ -38,16 +62,11 @@
         width: 2em;
     }
 }
-
-.global>*{
-    margin: 1vw;
-    width: fit-content;
-}
 .formulaire{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1em;
+    background-color: mediumpurple;
 }
 .formulaire form{
     display: flex;
@@ -55,8 +74,12 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 1em;
+    background-color:rgb(227, 215, 251);
     padding: 1em;
-    border: 1px solid black;
+    border: 3px solid rgb(93, 16, 129);
+    border-radius: 1em;
+    box-shadow: 3px 3px rgb(48, 8, 67);
 
 }
 form .input{
