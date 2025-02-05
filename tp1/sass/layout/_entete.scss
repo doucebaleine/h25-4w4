@@ -14,9 +14,24 @@
         flex-wrap: wrap;
 
     }
+    &__logo img{
+        width: 5vw;
+    }
+    &__burger{
+        display: none;
+        @media screen and (max-width:$point__rupture) {
+            display: flex;
+        }
+    }
+    &__checkbox{
+        display: none;
+    }
+    &__burger:checked{
+        &__nav{
+            display: flex;
+        }
+    }
 }
-.entete__logo img{
-    width: 10vw;
-}
+
 
 

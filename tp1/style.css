@@ -112,24 +112,38 @@ Layout
   margin: 0 auto;
   max-width: 1000px;
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: space-around;
   min-height: 75vh;
 }
 
 .hero {
-  min-height: 75vh;
-  background-image: url("images/maldives.jpg");
+  min-height: 100vh;
+  background-image: url("images/galaxie.jpg");
   display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-button {
+.hero__titre {
+  font-size: 3em;
+}
+.hero__bouton {
   display: block;
   padding: 2vw;
   border-radius: 2em;
   font-size: 2em;
   height: fit-content;
+  align-self: center;
+}
+.hero__icone-app {
+  align-self: center;
+}
+.hero__icone-app img {
+  background-color: white;
+  padding: 1px;
+  margin: 1px;
+  border-radius: 10px;
+  width: 2em;
 }
 
 .global > * {
@@ -141,18 +155,23 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1em;
 }
 
-form {
+.formulaire form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border: 1px solid black;
 }
 
-form div {
+form .input {
   display: flex;
   flex-direction: column;
-  margin: 1em;
+  margin-right: 1em;
 }
 
 input {
@@ -165,6 +184,35 @@ input {
   height: fit-content;
 }
 
+.galerie {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.galerie__fig {
+  width: 18vw;
+  height: 36vh;
+  margin-top: 1em;
+}
+
+.galerie div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+@media screen and (max-width: 700px) {
+  .galerie__fig {
+    width: 36vw;
+    height: 30vh;
+    margin-top: 1em;
+  }
+  .formulaire {
+    display: none;
+  }
+}
 .entete {
   display: flex;
   justify-content: space-between;
@@ -182,7 +230,20 @@ input {
     flex-direction: column;
   }
 }
-
 .entete__logo img {
-  width: 10vw;
+  width: 5vw;
+}
+.entete__burger {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .entete__burger {
+    display: flex;
+  }
+}
+.entete__checkbox {
+  display: none;
+}
+.entete__burger:checked__nav {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */

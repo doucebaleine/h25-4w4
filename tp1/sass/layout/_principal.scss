@@ -2,24 +2,43 @@
    margin : 0 auto;
    max-width: 1000px;
    display: flex;
-   align-items: center;
    flex-direction: column;
    justify-content: space-around;
    min-height: 75vh;
 }
 
+
 .hero{
-    min-height: 75vh;
-    background-image: url("images/maldives.jpg");
+    min-height: 100vh;
+    background-image: url("images/galaxie.jpg");
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__titre{
+        font-size: 3em;
+    }
+
+    &__bouton{
+        display: block;
+        padding: 2vw;
+        border-radius: 2em;
+        font-size: 2em;
+        height: fit-content;
+        align-self: center;
+    }
+    &__icone-app{
+        align-self: center;
+    }
+    &__icone-app img{
+        background-color: white;
+        padding: 1px;
+        margin: 1px;
+        border-radius: 10px;
+        width: 2em;
+    }
 }
-button{
-    display: block;
-    padding: 2vw;
-    border-radius: 2em;
-    font-size: 2em;
-    height: fit-content;
-}
+
 .global>*{
     margin: 1vw;
     width: fit-content;
@@ -28,16 +47,22 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1em;
 }
-form{
+.formulaire form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid black;
+
 }
-form div{
+form .input{
     display: flex;
     flex-direction: column;
-    margin: 1em;
+    margin-right: 1em;
 }
 input{
     display: block;
@@ -46,4 +71,35 @@ input{
 .inscrire{
     width: fit-content;
     height: fit-content;
+}
+.galerie{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.galerie__fig{
+    width: 18vw;
+    height: 36vh;
+    margin-top: 1em;
+}
+.galerie div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+}
+
+
+// ADAPTATIF
+
+@media screen and (max-width:$point__rupture) {
+    .galerie__fig{
+        width: 36vw;
+        height: 30vh;
+        margin-top: 1em;
+    }
+    .formulaire{
+        display: none;
+    }
 }
